@@ -57,7 +57,7 @@ function App() {
   const closeModal = () => setModalData(null);
 
   return (
-  <div className="min-h-screen bg-gray-100 text-gray-800 px-4 py-8">
+  <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white px-4 py-8">
     <ThemeToggle />
     <header className="text-center mb-10">
       <h1 className="text-4xl font-bold text-indigo-600">My Blog</h1>

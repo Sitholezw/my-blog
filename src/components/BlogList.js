@@ -6,6 +6,7 @@ const BlogList = ({ posts, openModal }) => (
       <article
         key={post.id}
         className="bg-white shadow-md rounded-xl overflow-hidden transition-transform hover:scale-[1.02]"
+        
       >
         <img
           src={post.image}
