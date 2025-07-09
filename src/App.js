@@ -12,6 +12,7 @@ import emailjs from 'emailjs-com';
 
 
 function App() {
+  
   const blogPosts = [
     {
       id: 1,
@@ -55,16 +56,18 @@ function App() {
   const closeModal = () => setModalData(null);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>My Blog</h1>
-      </header>
+  <div className="min-h-screen bg-gray-100 text-gray-800 px-4 py-8">
+    <header className="text-center mb-10">
+      <h1 className="text-4xl font-bold text-indigo-600">My Blog</h1>
+    </header>
 
+    <div className="max-w-3xl mx-auto space-y-8">
       <input
         type="text"
         placeholder="Search blog posts..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
 
       <TagFilter tags={allTags} selectedTag={selectedTag} onSelect={setSelectedTag} />
@@ -72,9 +75,12 @@ function App() {
       <Pagination totalPages={totalPages} currentPage={currentPage} onChange={setCurrentPage} />
       <ContactForm />
       <NewsletterForm />
-      <Modal data={modalData} onClose={closeModal} />
     </div>
-  );
+
+    <Modal data={modalData} onClose={closeModal} />
+  </div>
+);
+
 }
 
 export default App;
