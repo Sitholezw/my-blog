@@ -16,11 +16,11 @@ const NewsletterForm = () => (
         name="EMAIL"
         placeholder="Your email"
         required
-        className="w-full sm:w-auto flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+         className="bg-white dark:bg-gray-700 text-gray-800 dark:text-white border dark:border-gray-600 px-4 py-2 rounded"
       />
       <button
         type="submit"
-        className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg transition font-semibold"
+       className="bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
       >
         Subscribe
       </button>

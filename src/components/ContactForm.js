@@ -12,7 +12,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="bg-white p-8 rounded-xl shadow-md max-w-2xl mx-auto">
+    <section className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-8 rounded-xl shadow-md max-w-2xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">Contact Me</h2>
       <form onSubmit={sendEmail} className="space-y-4">
         <input
@@ -20,21 +20,21 @@ const ContactForm = () => {
           name="user_name"
           placeholder="Your Name"
           required
-          className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+           className="bg-white dark:bg-gray-700 text-gray-800 dark:text-white border dark:border-gray-600 px-4 py-2 rounded"
         />
         <input
           type="email"
           name="user_email"
           placeholder="Your Email"
           required
-          className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+           className="bg-white dark:bg-gray-700 text-gray-800 dark:text-white border dark:border-gray-600 px-4 py-2 rounded"
         />
         <input
           type="text"
           name="user_subject"
           placeholder="Your Subject"
           required
-          className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="bg-white dark:bg-gray-700 text-gray-800 dark:text-white border dark:border-gray-600 px-4 py-2 rounded"
         />
         <textarea
           name="message"
@@ -45,7 +45,7 @@ const ContactForm = () => {
         ></textarea>
         <button
           type="submit"
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg transition font-semibold"
+           className="bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
         >
           Send
         </button>
