@@ -8,6 +8,7 @@ import Pagination from './components/Pagination';
 import TagFilter from './components/TagFilter';
 //import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
+import ThemeToggle from './components/ThemeToggle';
 
 
 
@@ -57,6 +58,7 @@ function App() {
 
   return (
   <div className="min-h-screen bg-gray-100 text-gray-800 px-4 py-8">
+    <ThemeToggle />
     <header className="text-center mb-10">
       <h1 className="text-4xl font-bold text-indigo-600">My Blog</h1>
     </header>
