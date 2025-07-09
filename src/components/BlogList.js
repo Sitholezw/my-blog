@@ -1,24 +1,25 @@
 import React from 'react';
 
 const BlogList = ({ posts, openModal }) => (
-  <section className="grid md:grid-cols-2 gap-8">
-    {posts.map((post) => (
+  <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {posts.map(post => (
       <article
         key={post.id}
-        //className="bg-white shadow-md rounded-xl overflow-hidden transition-transform hover:scale-[1.02]"
-        className="bg-white dark:bg-gray-800 dark:text-white shadow-md rounded-xl overflow-hidden transition-transform hover:scale-[1.02]"
+        className="bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark rounded-lg shadow-md overflow-hidden transition hover:scale-[1.02]"
       >
         <img
           src={post.image}
           alt={post.title}
           className="w-full h-48 object-cover"
         />
-        <div className="p-6">
-          <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-          <p className="text-gray-700 mb-4">{post.content}</p>
+        <div className="p-4 flex flex-col gap-2">
+          <h2 className="text-xl font-bold text-primary dark:text-primary-light">
+            {post.title}
+          </h2>
+          <p className="text-sm">{post.content}</p>
           <button
             onClick={() => openModal(post)}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
+            className="mt-auto self-start bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition"
           >
             Read More
           </button>
@@ -29,3 +30,12 @@ const BlogList = ({ posts, openModal }) => (
 );
 
 export default BlogList;
+// This component renders a list of blog posts.
+// Each post is displayed as a card with an image, title, content snippet, and a "Read More" button.
+// The cards are styled with Tailwind CSS for a modern look and feel.
+// The "Read More" button opens a modal with the full content of the post when clicked.
+// The component uses a responsive grid layout that adapts to different screen sizes.
+// The posts are passed as a prop, allowing for dynamic content rendering.
+// The component is designed to be reusable, making it easy to integrate into different parts of the application.
+// The use of Tailwind CSS classes ensures a consistent design language across the application.
+// The component is optimized for performance, rendering only the necessary elements.
