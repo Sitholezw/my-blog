@@ -85,7 +85,7 @@ const [blogPosts, setBlogPosts] = useState([
 
 const [modalData, setModalData] = useState(null);
 const [currentPage, setCurrentPage] = useState(1);
-const postsPerPage = 6;
+const postsPerPage = 9; // Number of posts per page
 const [searchQuery, setSearchQuery] = useState("");
 const [selectedTag, setSelectedTag] = useState("All");
 
