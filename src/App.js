@@ -79,6 +79,14 @@ const [blogPosts, setBlogPosts] = useState([
     fullContent: "Vercel offers a seamless experience for deploying React apps. Connect your GitHub repo, set the build command, and your site is live. Fast, reliable, and free for hobby use.",
     image: "./img/vercel.jpeg",
     tags: ["Deployment", "Vercel", "React"]
+  },
+   {
+    id: 9,
+    title: "What is CUT-LMS",
+    content: "Apply your leave online hustle free.",
+    fullContent: "This site offers employees to apply for their leave days in th comfort of their home, work offices or anywhere as long as there is an internet connection.",
+    image: "./img/Cut.png",
+    tags: ["Php", "mui", "React"]
   }
   // Add more posts as needed
 ]);
