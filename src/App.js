@@ -143,7 +143,7 @@ const closeModal = () => setModalData(null);
       <BlogList posts={currentPosts} openModal={openModal} />
       <Pagination totalPages={totalPages} currentPage={currentPage} onChange={setCurrentPage} />
       <ContactForm />
-      <NewsletterForm />
+     {/* <NewsletterForm />*/}
     </div>
 
     <Modal data={modalData} onClose={closeModal} />
