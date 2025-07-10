@@ -88,6 +88,14 @@ const [blogPosts, setBlogPosts] = useState([
     fullContent: "This site offers employees to apply for their leave days in th comfort of their home, work offices or anywhere as long as there is an internet connection.",
     image: "./img/Cut.png",
     tags: ["Php", "mui", "React"]
+  },
+  {
+    id: 10,
+    title: "What is CUT-LMS",
+    content: "Apply your leave online hustle free.",
+    fullContent: "This site offers employees to apply for their leave days in th comfort of their home, work offices or anywhere as long as there is an internet connection.",
+    image: "./img/Cut.png",
+    tags: ["Php", "mui", "React"]
   }
   // Add more posts as needed
 ]);
