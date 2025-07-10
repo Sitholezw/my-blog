@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react'; // Optional: lucide icons
+import { Moon, Sun } from 'lucide-react';
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -30,13 +30,19 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Dark mode toggle button */}
+          {/* Animated Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:ring-2 hover:ring-primary transition"
+            className={`p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-all duration-300 hover:ring-2 hover:ring-primary transform ${
+              darkMode ? 'rotate-180 scale-110' : 'rotate-0 scale-100'
+            }`}
             aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} className="text-gray-600" />}
+            {darkMode ? (
+              <Sun size={18} className="text-yellow-400 transition-colors duration-300" />
+            ) : (
+              <Moon size={18} className="text-gray-600 transition-colors duration-300" />
+            )}
           </button>
         </div>
       </div>
@@ -45,5 +51,5 @@ const Header = () => {
 };
 
 export default Header;
-// This component serves as the header for the blog, including a title and a dark mode toggle.
-// It uses local storage to persist the theme preference across sessions.
+// This is a header component for a blog site.
+// It includes a title, navigation links, and a dark mode toggle button.
