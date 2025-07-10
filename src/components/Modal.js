@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { X, Heart, Share2 } from 'lucide-react';
+import { X, Heart, HeartOff, Share2, Check } from 'lucide-react';
 
 const Modal = ({ data, onClose }) => {
   const [show, setShow] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (data) {
       setShow(true);
+      setLiked(false);
+      setLikeCount(Math.floor(Math.random() * 50)); // mock count
     }
   }, [data]);
 
   const handleClose = () => {
     setShow(false);
-    setTimeout(() => {
-      onClose();
-    }, 250); // match the transition duration
+    setTimeout(onClose, 250);
+  };
+
+  const toggleLike = () => {
+    setLiked(!liked);
+    setLikeCount(prev => prev + (liked ? -1 : 1));
+  };
+
+  const handleShare = () => {
+    const url = `${window.location.origin}/#post-${data.id}`;
+    navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   if (!data) return null;
@@ -32,7 +47,7 @@ const Modal = ({ data, onClose }) => {
           show ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         }`}
       >
-        {/* Close Button */}
+        {/* Close */}
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-red-500 transition"
@@ -48,13 +63,35 @@ const Modal = ({ data, onClose }) => {
         <h2 className="text-2xl font-bold text-primary dark:text-primary-light">{data.title}</h2>
         <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line">{data.fullContent}</p>
 
-        {/* Like and Share */}
-        <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-          <button className="flex items-center gap-1 text-sm text-primary hover:scale-105 transition">
-            <Heart size={18} /> Like
+        {/* Like + Share */}
+        <div className="flex gap-6 pt-4 border-t border-gray-200 dark:border-gray-700 items-center">
+          {/* Like */}
+          <button
+            onClick={toggleLike}
+            className="flex items-center gap-1 text-sm text-primary hover:scale-105 transition"
+          >
+            {liked ? (
+              <Heart className="text-red-500 fill-red-500" size={18} />
+            ) : (
+              <HeartOff size={18} />
+            )}
+            {likeCount} Like{likeCount !== 1 && 's'}
           </button>
-          <button className="flex items-center gap-1 text-sm text-primary hover:scale-105 transition">
-            <Share2 size={18} /> Share
+
+          {/* Share */}
+          <button
+            onClick={handleShare}
+            className="flex items-center gap-1 text-sm text-primary hover:scale-105 transition"
+          >
+            {copied ? (
+              <>
+                <Check size={18} className="text-green-500" /> Copied!
+              </>
+            ) : (
+              <>
+                <Share2 size={18} /> Share
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -63,15 +100,10 @@ const Modal = ({ data, onClose }) => {
 };
 
 export default Modal;
-// This component renders a modal for displaying detailed blog post content.
-// It includes a close button, an image, title, full content, and like/share buttons.
+// This component renders a modal for displaying blog post details.
+// It includes features like liking the post, sharing the post link, and closing the modal.
 // The modal appears with a fade-in effect and can be closed by clicking outside or on the close button.
-// The component uses Tailwind CSS for styling and supports dark mode.
-// The modal's visibility is controlled by the `data` prop, and it uses a transition effect for smooth appearance and disappearance.
-// The `onClose` function is called when the modal is closed, allowing the parent component to reset the modal state.
-// The modal also includes a backdrop that darkens the background when open, enhancing focus on the modal content.
-// The like and share buttons are styled for a consistent look and feel, with hover effects for interactivity.
-// The modal is responsive, adapting to different screen sizes while maintaining a maximum width and height.
-// The content is scrollable if it exceeds the maximum height, ensuring usability on smaller screens.
-// The component is designed to be reusable and can be integrated into any part of the application where detailed content needs to be displayed in a modal format.
-// It lever
+// The like button toggles the like state and updates the like count.
+// The share button copies the post link to the clipboard and shows a confirmation message.
+// The modal is responsive and adapts to different screen sizes, ensuring a good user experience on both desktop and mobile devices.
+// The component uses Tailwind CSS for styling and Lucide icons for the
