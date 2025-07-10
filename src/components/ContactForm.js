@@ -21,9 +21,9 @@ const ContactForm = () => {
   return (
     <section className="py-12 bg-transparent">
       {/* 👇 This matches your global layout container */}
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 👇 This centers the form in the section */}
-       {/* <div className="max-w-2xl mx-auto p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 bg-white/60 dark:bg-white/5 backdrop-blur-md">*/}
+        <div className="max-w-7xl mx-auto p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 bg-white/60 dark:bg-white/5 backdrop-blur-md">
           <h2 className="text-2xl font-bold text-center text-primary dark:text-primary-light mb-6">
             Contact Me
           </h2>
@@ -76,7 +76,7 @@ const ContactForm = () => {
             </button>
           </form>
         </div>
-      {/* </div> 👆 This matches your global layout container */}
+       </div> 
     </section>
   );
 };
