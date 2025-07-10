@@ -1,5 +1,8 @@
 import React from 'react';
 import { Facebook,Twitter,Instagram } from 'lucide-react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 mt-12 pt-12">
@@ -13,9 +16,11 @@ const Footer = () => {
             Stay up to date with our latest posts.
           </p>
           <form
-            action="https://YOUR_MAILCHIMP_URL"
-            method="post"
-            target="_blank"
+          onSubmit={(e) => {
+            e.preventDefault() || toast.success("Subscribed successfully! Please check your email for confirmation.") &&
+            e.target.reset();
+          }}
+           
             className="flex flex-col sm:flex-row gap-4"
           >
             <input
@@ -32,6 +37,7 @@ const Footer = () => {
               Subscribe
             </button>
           </form>
+            <ToastContainer position='top-center' autoClose={3000} hideProgressBar={true} closeOnClick pauseOnHover draggable pauseOnFocusLoss />
           {/* Social Links */}
 <div className="flex justify-center gap-6 mt-6 text-gray-600 dark:text-gray-300">
   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
