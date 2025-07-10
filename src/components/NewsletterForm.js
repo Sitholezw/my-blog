@@ -6,17 +6,19 @@ const NewsletterForm = () => {
   const [toast, setToast] = useState(null);
 
   const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (!email) {
-      setToast({ type: 'error', message: 'Please enter a valid email.' });
-      return;
-    }
+  e.preventDefault();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Simulate success response
-    setToast({ type: 'success', message: 'Subscribed successfully!' });
-    setEmail('');
-    setTimeout(() => setToast(null), 3000);
-  };
+  if (!email || !emailRegex.test(email)) {
+    setToast({ type: 'error', message: 'Please enter a valid email address.' });
+    return;
+  }
+
+  // Simulate success response
+  setToast({ type: 'success', message: 'Subscribed successfully!' });
+  setEmail('');
+  setTimeout(() => setToast(null), 3000);
+};
 
   return (
     <footer className="bg-white/80 dark:bg-white/10 backdrop-blur-md px-4 sm:px-6 lg:px-8 py-12 shadow-inner">
