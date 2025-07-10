@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Facebook,Twitter,Instagram } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 mt-12 pt-12">
@@ -32,6 +32,19 @@ const Footer = () => {
               Subscribe
             </button>
           </form>
+          {/* Social Links */}
+<div className="flex justify-center gap-6 mt-6 text-gray-600 dark:text-gray-300">
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+    <Facebook />
+  </a>
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+    <Twitter />
+  </a>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+    <Instagram />
+  </a>
+</div>
+
         </div>
 
         {/* Footer Bottom */}
