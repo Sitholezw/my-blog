@@ -11,7 +11,7 @@ const ContactForm = () => {
       .then(() => {
         setSuccess(true);
         e.target.reset();
-        setTimeout(() => setSuccess(false), 5000); // Auto-hide after 5s
+        setTimeout(() => setSuccess(false), 5000);
       })
       .catch(() => {
         alert('❌ Failed to send message.');
@@ -19,10 +19,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-12">
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-surface-dark p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-bold text-primary dark:text-primary-light mb-6 text-center">
+    <section className="py-12 bg-transparent">
+      {/* 👇 This matches your global layout container */}
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 👇 This centers the form in the section */}
+       {/* <div className="max-w-2xl mx-auto p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 bg-white/60 dark:bg-white/5 backdrop-blur-md">*/}
+          <h2 className="text-2xl font-bold text-center text-primary dark:text-primary-light mb-6">
             Contact Me
           </h2>
 
@@ -74,12 +76,9 @@ const ContactForm = () => {
             </button>
           </form>
         </div>
-      </div>
+      {/* </div> 👆 This matches your global layout container */}
     </section>
   );
 };
 
 export default ContactForm;
-// This component renders a contact form with fields for name, email, subject, and message.
-// It uses EmailJS to send the form data to a specified email service.
-// The form includes success feedback that appears when the message is sent successfully. 
