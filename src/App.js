@@ -125,9 +125,9 @@ const closeModal = () => setModalData(null);
   return (
   <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark px-4 py-8">
     <Header /> 
-    <ThemeToggle />
+    {/*<ThemeToggle />*/}
        <header className="text-center mb-10">
-      <h1 className="text-4xl font-bold text-primary dark:text-primary-light">My Blog</h1>
+      {/*<h1 className="text-4xl font-bold text-primary dark:text-primary-light">My Blog</h1>*/}
     </header>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
