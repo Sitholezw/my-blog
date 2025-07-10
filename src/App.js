@@ -9,7 +9,8 @@ import TagFilter from './components/TagFilter';
 //import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
 import ThemeToggle from './components/ThemeToggle';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -123,9 +124,9 @@ const closeModal = () => setModalData(null);
 
   return (
   <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark px-4 py-8">
+    <Header /> 
     <ThemeToggle />
-    
-    <header className="text-center mb-10">
+       <header className="text-center mb-10">
       <h1 className="text-4xl font-bold text-primary dark:text-primary-light">My Blog</h1>
     </header>
 
@@ -146,6 +147,7 @@ const closeModal = () => setModalData(null);
     </div>
 
     <Modal data={modalData} onClose={closeModal} />
+    <Footer />
   </div>
 );
 };
